@@ -40,7 +40,7 @@ volumes:
   postgres_db:
 secrets:
   db_password:
-    file: db_password.txt
+    file: ./secrets/db_password.txt
   db_user:
-    file: db_user.txt
+    file: ./secrets/db_user.txt
 
