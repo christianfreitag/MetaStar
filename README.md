@@ -12,3 +12,12 @@
 ```
     pip install -r requirements.txt
 ```
+
+
+### Rodar Docker
+
+* Subir docker com postgres e Metabase
+
+```
+    docker compose up
+```

@@ -6,16 +6,15 @@ services:
     container_name: postgresMetabase
     restart: always
     build: ./seed
-    hostname: postgres
     environment:
-      POSTGRES_USER: ${POST_USER}
+      POSTGRES_USER: ${POST_USER} 
       POSTGRES_PASSWORD: ${POST_PASS}
       POSTGRES_DB: ${POST_DB}
     ports:
-      - "5432:5432"
+      - "5439:5432"
     volumes:
       - postgres_db:/var/lib/postgresql/data
-      - ./pg/seeds/set_metabase_env.sql:/docker-entrypoint-initdb.d/set_metabase_env.sql
+      - ./pg/postgres/seeds/set_metabase_env.sql:/docker-entrypoint-initdb.d/set_metabase_env.sql
 
   metabase:
     container_name: metabase
