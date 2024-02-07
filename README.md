@@ -45,3 +45,5 @@
 [https://drive.google.com/file/d/1-53cfjTUH-X4D_lj_TJqy97c46At-9oj/view?usp=drive_link]
 
 * Execute um por um
+
+https://medium.com/@burakkocakeu/get-pg-dump-from-a-docker-container-and-pg-restore-into-another-in-5-steps-74ca5bf0589c

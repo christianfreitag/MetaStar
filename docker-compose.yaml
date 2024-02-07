@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   postgres:
     image: postgres:latest
     container_name: postgresMetabase
@@ -14,7 +15,7 @@ services:
       - "5439:5432"
     volumes:
       - ./postgres_db:/var/lib/postgresql/data
-      - ./pg/postgres/seeds/set_metabase_env.sql:/docker-entrypoint-initdb.d/set_metabase_env.sql
+      - ./pg/seeds/set_metabase_env.sql:/docker-entrypoint-initdb.d/set_metabase_env.sql
   
 
   metabase:

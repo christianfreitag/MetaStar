@@ -9,6 +9,8 @@ def transform_spark_dataframe_into_star_schema(
 ):
 
     colunas_fato_e_dimensao = colunas_fato + [col for cols in mapping_colunas_dimensao.values() for col in cols]
+
+    print(">",mapping_colunas_dimensao.values())
     dataframe = dataframe.select(*colunas_fato_e_dimensao)
 
     dimensions = []
