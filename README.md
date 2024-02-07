@@ -22,7 +22,7 @@
     schemas: Selecione 'Apenas estes' e digite 'votacao_candidato'
 
     CASO JA POSSUA CONTA:
-    email: metabase
+    email: m@a.com
     senha: metabase
 
 ```
@@ -41,7 +41,7 @@
     pip install -r requirements.txt
 ```
 
-* Baixe o parquet.gzip do link e cole na pasta *data*
+* Baixe o parquet.gzip do link e cole na pasta *data* na raiz
 [https://drive.google.com/file/d/1-53cfjTUH-X4D_lj_TJqy97c46At-9oj/view?usp=drive_link]
 
 * Execute um por um
