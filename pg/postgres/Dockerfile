@@ -1,2 +1,3 @@
 FROM postgres:latest
-COPY seeds/set_metabase_env.sql /docker-entrypoint-initdb.d/
+COPY ./seeds/*.sql /docker-entrypoint-initdb.d/
+RUN echo 'BANCO DE DADOS DO METABASE E TABELA DE TESTE CRIADAS!'

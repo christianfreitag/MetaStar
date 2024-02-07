@@ -1,3 +1,2 @@
-votacao_candidato_munzona_2022_BRASIL.csv
-votacao.parquet.gzip
+./data/votacao_candidato_munzona_2022_BRASIL.parquet.gzip
 .venv

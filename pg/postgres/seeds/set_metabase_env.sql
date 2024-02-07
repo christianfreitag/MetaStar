@@ -24,15 +24,15 @@ BEGIN
     END IF;
 
     --- CRIA TABELA DE TESTE PARA VISUALIZAR NO METABASE
-    CREATE TABLE votacao_candidato.candidato_teste (id int primary key,nome varchar(200),partido varchar(10));
-    INSERT INTO votacao_candidato.candidato_teste (id, nome, partido)
-    VALUES(1, 'José peixera', 'PT');
-    INSERT INTO votacao_candidato.candidato_teste (id, nome, partido)
-    VALUES(2, 'maria', 'PSOL');
-    INSERT INTO votacao_candidato.candidato_teste (id, nome, partido)
-    VALUES(3, 'Lucas', 'PT');
-    INSERT INTO votacao_candidato.candidato_teste (id, nome, partido)
-    VALUES(4, 'Pedro', 'PSDB');
+    CREATE TABLE votacao_candidato.candidato_teste (id int primary key,nome varchar(200),partido varchar(10), votos int);
+    INSERT INTO votacao_candidato.candidato_teste (id, nome, partido, votos)
+    VALUES(1, 'José peixera', 'PT',21);
+    INSERT INTO votacao_candidato.candidato_teste (id, nome, partido,votos)
+    VALUES(2, 'maria', 'PSOL',1343);
+    INSERT INTO votacao_candidato.candidato_teste (id, nome, partido,votos)
+    VALUES(3, 'Lucas', 'PT',231);
+    INSERT INTO votacao_candidato.candidato_teste (id, nome, partido,votos)
+    VALUES(4, 'Pedro Ornesto', 'PSDB',2134);
 
 
 END

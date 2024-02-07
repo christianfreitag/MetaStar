@@ -13,8 +13,9 @@ services:
     ports:
       - "5439:5432"
     volumes:
-      - postgres_db:/var/lib/postgresql/data
+      - ./postgres_db:/var/lib/postgresql/data
       - ./pg/postgres/seeds/set_metabase_env.sql:/docker-entrypoint-initdb.d/set_metabase_env.sql
+  
 
   metabase:
     container_name: metabase
@@ -34,10 +35,11 @@ services:
     secrets:
       - db_password
       - db_user
+
     
-  
 volumes:
   postgres_db:
+  metabase:
 secrets:
   db_password:
     file: ./secrets/db_password.txt
