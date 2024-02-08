@@ -45,5 +45,7 @@
 [https://drive.google.com/file/d/1-53cfjTUH-X4D_lj_TJqy97c46At-9oj/view?usp=drive_link]
 
 * Execute um por um
-
+docker exec -t postgresMetabase pg_dumpall -c -U postgres > dump_data_metabse.sql
+docker exec postgresMetabase /usr/bin/mysqldump -u postgres --password=postgres metabase > backup.sql
+type dump_data_metabse.sql | docker exec -i postgresMetabase psql -U postgres
 https://medium.com/@burakkocakeu/get-pg-dump-from-a-docker-container-and-pg-restore-into-another-in-5-steps-74ca5bf0589c

@@ -1,12 +1,13 @@
 version: '3'
 
 services:
-
   postgres:
     image: postgres:latest
     container_name: postgresMetabase
     restart: always
-    build: ./seed
+    build:
+      context: .
+      dockerfile: postgres.Dockerfile
     environment:
       POSTGRES_USER: ${POST_USER} 
       POSTGRES_PASSWORD: ${POST_PASS}
@@ -14,10 +15,9 @@ services:
     ports:
       - "5439:5432"
     volumes:
-      - ./postgres_db:/var/lib/postgresql/data
-      - ./pg/seeds/set_metabase_env.sql:/docker-entrypoint-initdb.d/set_metabase_env.sql
+      - postgres_db:/var/lib/postgresql/data
+      - ./pg/set_metabase_env.sql:/docker-entrypoint-initdb.d/set_metabase_env.sql
   
-
   metabase:
     container_name: metabase
     restart: always
@@ -28,22 +28,12 @@ services:
       MB_DB_TYPE: postgres
       MB_DB_DBNAME: metabase
       MB_DB_PORT: 5432
-      MB_DB_USER_FILE: /run/secrets/db_user
-      MB_DB_PASS_FILE: /run/secrets/db_password
+      MB_DB_USER: metabase
+      MB_DB_PASS: metabase
       MB_DB_HOST: postgres
     ports:
-      - 3000:3000
-    secrets:
-      - db_password
-      - db_user
-
-    
+      - 3000:3000   
 volumes:
   postgres_db:
-  metabase:
-secrets:
-  db_password:
-    file: ./secrets/db_password.txt
-  db_user:
-    file: ./secrets/db_user.txt
+
 
